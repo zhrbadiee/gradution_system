@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5E4D89C-75A3-414C-BA97-9492049300A9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>gradution</RootNamespace>
+    <AssemblyName>gradution</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_graduation_CRi_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="form-edit_meet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form-edit_meet.Designer.cs">
+      <DependentUpon>form-edit_meet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_edit_camp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_edit_camp.Designer.cs">
+      <DependentUpon>form_edit_camp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_edit_emp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_edit_emp.Designer.cs">
+      <DependentUpon>form_edit_emp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_edit_game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_edit_game.Designer.cs">
+      <DependentUpon>form_edit_game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_grad_join_camp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_grad_join_camp.Designer.cs">
+      <DependentUpon>form_grad_join_camp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_grad_join_game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_grad_join_game.Designer.cs">
+      <DependentUpon>form_grad_join_game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_grad_join_meet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_grad_join_meet.Designer.cs">
+      <DependentUpon>form_grad_join_meet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_grad_request_camp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_grad_request_camp.Designer.cs">
+      <DependentUpon>form_grad_request_camp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_grad_request_game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_grad_request_game.Designer.cs">
+      <DependentUpon>form_grad_request_game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_grad_request_meet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_grad_request_meet.Designer.cs">
+      <DependentUpon>form_grad_request_meet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_list_camp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_list_camp.Designer.cs">
+      <DependentUpon>form_list_camp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_list_emp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_list_emp.Designer.cs">
+      <DependentUpon>form_list_emp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_list_game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_list_game.Designer.cs">
+      <DependentUpon>form_list_game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_list_mett.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_list_mett.Designer.cs">
+      <DependentUpon>form_list_mett.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_login_grad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_login_grad.Designer.cs">
+      <DependentUpon>form_login_grad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_manage.Designer.cs">
+      <DependentUpon>form_manage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_putof_meet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_putof_meet.Designer.cs">
+      <DependentUpon>form_putof_meet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_record_camp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_record_camp.Designer.cs">
+      <DependentUpon>form_record_camp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_record_game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_record_game.Designer.cs">
+      <DependentUpon>form_record_game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_record_meeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_record_meeting.Designer.cs">
+      <DependentUpon>form_record_meeting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_gradution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_gradution.Designer.cs">
+      <DependentUpon>form_gradution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_list_grad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_list_grad.Designer.cs">
+      <DependentUpon>form_list_grad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_loading.Designer.cs">
+      <DependentUpon>form_loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_login_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_login_admin.Designer.cs">
+      <DependentUpon>form_login_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_registergrad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_registergrad.Designer.cs">
+      <DependentUpon>form_registergrad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_register_camp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_register_camp.Designer.cs">
+      <DependentUpon>form_register_camp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_register_emp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_register_emp.Designer.cs">
+      <DependentUpon>form_register_emp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_register_game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_register_game.Designer.cs">
+      <DependentUpon>form_register_game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_register_meet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_register_meet.Designer.cs">
+      <DependentUpon>form_register_meet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_edit_grad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_edit_grad.Designer.cs">
+      <DependentUpon>form_edit_grad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_request_camp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_request_camp.Designer.cs">
+      <DependentUpon>form_request_camp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_request_game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_request_game.Designer.cs">
+      <DependentUpon>form_request_game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_request_meet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_request_meet.Designer.cs">
+      <DependentUpon>form_request_meet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_skill_grad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_skill_grad.Designer.cs">
+      <DependentUpon>form_skill_grad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form-edit_meet.resx">
+      <DependentUpon>form-edit_meet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_edit_camp.resx">
+      <DependentUpon>form_edit_camp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_edit_emp.resx">
+      <DependentUpon>form_edit_emp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_edit_game.resx">
+      <DependentUpon>form_edit_game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_grad_join_camp.resx">
+      <DependentUpon>form_grad_join_camp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_grad_join_game.resx">
+      <DependentUpon>form_grad_join_game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_grad_join_meet.resx">
+      <DependentUpon>form_grad_join_meet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_grad_request_camp.resx">
+      <DependentUpon>form_grad_request_camp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_grad_request_game.resx">
+      <DependentUpon>form_grad_request_game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_grad_request_meet.resx">
+      <DependentUpon>form_grad_request_meet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_list_camp.resx">
+      <DependentUpon>form_list_camp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_list_emp.resx">
+      <DependentUpon>form_list_emp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_list_game.resx">
+      <DependentUpon>form_list_game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_list_mett.resx">
+      <DependentUpon>form_list_mett.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_login_grad.resx">
+      <DependentUpon>form_login_grad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_manage.resx">
+      <DependentUpon>form_manage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_putof_meet.resx">
+      <DependentUpon>form_putof_meet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_record_camp.resx">
+      <DependentUpon>form_record_camp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_record_game.resx">
+      <DependentUpon>form_record_game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_record_meeting.resx">
+      <DependentUpon>form_record_meeting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_gradution.resx">
+      <DependentUpon>form_gradution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_list_grad.resx">
+      <DependentUpon>form_list_grad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_loading.resx">
+      <DependentUpon>form_loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_login_admin.resx">
+      <DependentUpon>form_login_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_registergrad.resx">
+      <DependentUpon>form_registergrad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_register_camp.resx">
+      <DependentUpon>form_register_camp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_register_emp.resx">
+      <DependentUpon>form_register_emp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_register_game.resx">
+      <DependentUpon>form_register_game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_register_meet.resx">
+      <DependentUpon>form_register_meet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_edit_grad.resx">
+      <DependentUpon>form_edit_grad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_request_camp.resx">
+      <DependentUpon>form_request_camp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_request_game.resx">
+      <DependentUpon>form_request_game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_request_meet.resx">
+      <DependentUpon>form_request_meet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_skill_grad.resx">
+      <DependentUpon>form_skill_grad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon_graduation_CRi_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

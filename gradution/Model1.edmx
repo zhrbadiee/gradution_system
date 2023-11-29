@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Camps">
+          <Key>
+            <PropertyRef Name="id_camp" />
+          </Key>
+          <Property Name="id_camp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_c" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="majer_c" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="place_c" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="count_c" Type="int" Nullable="false" />
+          <Property Name="date_start_c" Type="date" Nullable="false" />
+          <Property Name="date_finish_c" Type="date" Nullable="false" />
+          <Property Name="comment_c" Type="nvarchar(max)" />
+          <Property Name="oCID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ChairmanMeeting">
+          <Key>
+            <PropertyRef Name="MID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="MID" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="GID" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="id_game" />
+          </Key>
+          <Property Name="id_game" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_g" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="majer_g" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="count_g" Type="int" Nullable="false" />
+          <Property Name="date_start_g" Type="date" Nullable="false" />
+          <Property Name="date_finish_g" Type="date" Nullable="false" />
+          <Property Name="place_g" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="comment_g" Type="nvarchar(max)" />
+          <Property Name="oCID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Graduates">
+          <Key>
+            <PropertyRef Name="id_grad" />
+          </Key>
+          <Property Name="id_grad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codemeli" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fathername" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="birth" Type="date" Nullable="false" />
+          <Property Name="shnumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="status" Type="nchar" MaxLength="10" />
+          <Property Name="phon" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="mobile" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="study" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="majer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gpa" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="pic" Type="varbinary(max)" Nullable="false" />
+          <Property Name="oCID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="JoiningCamp">
+          <Key>
+            <PropertyRef Name="CaID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="id_join_camp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaID" Type="int" Nullable="false" />
+          <Property Name="GID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JoiningGame">
+          <Key>
+            <PropertyRef Name="GAID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="id_join_game" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GAID" Type="int" Nullable="false" />
+          <Property Name="GID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JoiningMeeting">
+          <Key>
+            <PropertyRef Name="MID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="id_join_mett" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MID" Type="int" Nullable="false" />
+          <Property Name="GID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Meetings">
+          <Key>
+            <PropertyRef Name="id_meeting" />
+          </Key>
+          <Property Name="id_meeting" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="major" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_start" Type="date" Nullable="false" />
+          <Property Name="date_finish" Type="date" Nullable="false" />
+          <Property Name="teacher" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="count_m" Type="int" />
+          <Property Name="madrak" Type="nchar" MaxLength="10" />
+          <Property Name="comment" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="oCID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Oganizer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="oCID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Organizer party">
+          <Key>
+            <PropertyRef Name="CommunityID" />
+          </Key>
+          <Property Name="CommunityID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="office" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="RequestCamp">
+          <Key>
+            <PropertyRef Name="CaID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="CaID" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="GID" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RequestCompetition">
+          <Key>
+            <PropertyRef Name="CoID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="CoID" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="GID" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RequestMeeting">
+          <Key>
+            <PropertyRef Name="MID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="MID" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="GID" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skills">
+          <Key>
+            <PropertyRef Name="nameskill" />
+          </Key>
+          <Property Name="nameskill" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="GID" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Camps_Organizer party">
+          <End Role="Organizer party" Type="Self.Organizer party" Multiplicity="0..1" />
+          <End Role="Camps" Type="Self.Camps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizer party">
+              <PropertyRef Name="CommunityID" />
+            </Principal>
+            <Dependent Role="Camps">
+              <PropertyRef Name="oCID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Competition_Organizer party">
+          <End Role="Organizer party" Type="Self.Organizer party" Multiplicity="0..1" />
+          <End Role="Game" Type="Self.Game" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizer party">
+              <PropertyRef Name="CommunityID" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="oCID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meetings_Organizer party">
+          <End Role="Organizer party" Type="Self.Organizer party" Multiplicity="0..1" />
+          <End Role="Meetings" Type="Self.Meetings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizer party">
+              <PropertyRef Name="CommunityID" />
+            </Principal>
+            <Dependent Role="Meetings">
+              <PropertyRef Name="oCID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Camps" EntityType="Self.Camps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChairmanMeeting" EntityType="Self.ChairmanMeeting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Graduates" EntityType="Self.Graduates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JoiningCamp" EntityType="Self.JoiningCamp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JoiningGame" EntityType="Self.JoiningGame" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JoiningMeeting" EntityType="Self.JoiningMeeting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Meetings" EntityType="Self.Meetings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oganizer" EntityType="Self.Oganizer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organizer party" EntityType="Self.Organizer party" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestCamp" EntityType="Self.RequestCamp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestCompetition" EntityType="Self.RequestCompetition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestMeeting" EntityType="Self.RequestMeeting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Camps_Organizer party" Association="Self.FK_Camps_Organizer party">
+            <End Role="Organizer party" EntitySet="Organizer party" />
+            <End Role="Camps" EntitySet="Camps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Competition_Organizer party" Association="Self.FK_Competition_Organizer party">
+            <End Role="Organizer party" EntitySet="Organizer party" />
+            <End Role="Game" EntitySet="Game" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meetings_Organizer party" Association="Self.FK_Meetings_Organizer party">
+            <End Role="Organizer party" EntitySet="Organizer party" />
+            <End Role="Meetings" EntitySet="Meetings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Camp">
+          <Key>
+            <PropertyRef Name="id_camp" />
+          </Key>
+          <Property Name="id_camp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_c" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="majer_c" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="place_c" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="count_c" Type="Int32" Nullable="false" />
+          <Property Name="date_start_c" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date_finish_c" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="comment_c" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="oCID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Organizer_party" Relationship="Self.FK_Camps_Organizer_party" FromRole="Camps" ToRole="Organizer_party" />
+        </EntityType>
+        <EntityType Name="ChairmanMeeting">
+          <Key>
+            <PropertyRef Name="MID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="MID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="GID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="id_game" />
+          </Key>
+          <Property Name="id_game" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_g" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="majer_g" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="count_g" Type="Int32" Nullable="false" />
+          <Property Name="date_start_g" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date_finish_g" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="place_g" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comment_g" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="oCID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Organizer_party" Relationship="Self.FK_Competition_Organizer_party" FromRole="Game" ToRole="Organizer_party" />
+        </EntityType>
+        <EntityType Name="Graduate">
+          <Key>
+            <PropertyRef Name="id_grad" />
+          </Key>
+          <Property Name="id_grad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codemeli" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fathername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="birth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="shnumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="phon" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="study" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="majer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gpa" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="oCID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="JoiningCamp">
+          <Key>
+            <PropertyRef Name="CaID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="id_join_camp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaID" Type="Int32" Nullable="false" />
+          <Property Name="GID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JoiningGame">
+          <Key>
+            <PropertyRef Name="GAID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="id_join_game" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GAID" Type="Int32" Nullable="false" />
+          <Property Name="GID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JoiningMeeting">
+          <Key>
+            <PropertyRef Name="MID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="id_join_mett" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MID" Type="Int32" Nullable="false" />
+          <Property Name="GID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Meeting">
+          <Key>
+            <PropertyRef Name="id_meeting" />
+          </Key>
+          <Property Name="id_meeting" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="major" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_start" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date_finish" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="teacher" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="count_m" Type="Int32" />
+          <Property Name="madrak" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="oCID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Organizer_party" Relationship="Self.FK_Meetings_Organizer_party" FromRole="Meetings" ToRole="Organizer_party" />
+        </EntityType>
+        <EntityType Name="Oganizer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="oCID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Organizer_party">
+          <Key>
+            <PropertyRef Name="CommunityID" />
+          </Key>
+          <Property Name="CommunityID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="office" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Camps" Relationship="Self.FK_Camps_Organizer_party" FromRole="Organizer_party" ToRole="Camps" />
+          <NavigationProperty Name="Games" Relationship="Self.FK_Competition_Organizer_party" FromRole="Organizer_party" ToRole="Game" />
+          <NavigationProperty Name="Meetings" Relationship="Self.FK_Meetings_Organizer_party" FromRole="Organizer_party" ToRole="Meetings" />
+        </EntityType>
+        <EntityType Name="RequestCamp">
+          <Key>
+            <PropertyRef Name="CaID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="CaID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="GID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RequestCompetition">
+          <Key>
+            <PropertyRef Name="CoID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="CoID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RequestMeeting">
+          <Key>
+            <PropertyRef Name="MID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="MID" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="GID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="nameskill" />
+          </Key>
+          <Property Name="nameskill" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Camps_Organizer_party">
+          <End Role="Organizer_party" Type="Self.Organizer_party" Multiplicity="0..1" />
+          <End Role="Camps" Type="Self.Camp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizer_party">
+              <PropertyRef Name="CommunityID" />
+            </Principal>
+            <Dependent Role="Camps">
+              <PropertyRef Name="oCID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Competition_Organizer_party">
+          <End Role="Organizer_party" Type="Self.Organizer_party" Multiplicity="0..1" />
+          <End Role="Game" Type="Self.Game" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizer_party">
+              <PropertyRef Name="CommunityID" />
+            </Principal>
+            <Dependent Role="Game">
+              <PropertyRef Name="oCID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meetings_Organizer_party">
+          <End Role="Organizer_party" Type="Self.Organizer_party" Multiplicity="0..1" />
+          <End Role="Meetings" Type="Self.Meeting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizer_party">
+              <PropertyRef Name="CommunityID" />
+            </Principal>
+            <Dependent Role="Meetings">
+              <PropertyRef Name="oCID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="School" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Camps" EntityType="Self.Camp" />
+          <EntitySet Name="ChairmanMeetings" EntityType="Self.ChairmanMeeting" />
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="Graduates" EntityType="Self.Graduate" />
+          <EntitySet Name="JoiningCamps" EntityType="Self.JoiningCamp" />
+          <EntitySet Name="JoiningGames" EntityType="Self.JoiningGame" />
+          <EntitySet Name="JoiningMeetings" EntityType="Self.JoiningMeeting" />
+          <EntitySet Name="Meetings" EntityType="Self.Meeting" />
+          <EntitySet Name="Oganizers" EntityType="Self.Oganizer" />
+          <EntitySet Name="Organizer_parties" EntityType="Self.Organizer_party" />
+          <EntitySet Name="RequestCamps" EntityType="Self.RequestCamp" />
+          <EntitySet Name="RequestCompetitions" EntityType="Self.RequestCompetition" />
+          <EntitySet Name="RequestMeetings" EntityType="Self.RequestMeeting" />
+          <EntitySet Name="Skills" EntityType="Self.Skill" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Camps_Organizer_party" Association="Self.FK_Camps_Organizer_party">
+            <End Role="Organizer_party" EntitySet="Organizer_parties" />
+            <End Role="Camps" EntitySet="Camps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Competition_Organizer_party" Association="Self.FK_Competition_Organizer_party">
+            <End Role="Organizer_party" EntitySet="Organizer_parties" />
+            <End Role="Game" EntitySet="Games" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meetings_Organizer_party" Association="Self.FK_Meetings_Organizer_party">
+            <End Role="Organizer_party" EntitySet="Organizer_parties" />
+            <End Role="Meetings" EntitySet="Meetings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="School">
+          <EntitySetMapping Name="Camps">
+            <EntityTypeMapping TypeName="Model.Camp">
+              <MappingFragment StoreEntitySet="Camps">
+                <ScalarProperty Name="id_camp" ColumnName="id_camp" />
+                <ScalarProperty Name="name_c" ColumnName="name_c" />
+                <ScalarProperty Name="majer_c" ColumnName="majer_c" />
+                <ScalarProperty Name="place_c" ColumnName="place_c" />
+                <ScalarProperty Name="count_c" ColumnName="count_c" />
+                <ScalarProperty Name="date_start_c" ColumnName="date_start_c" />
+                <ScalarProperty Name="date_finish_c" ColumnName="date_finish_c" />
+                <ScalarProperty Name="comment_c" ColumnName="comment_c" />
+                <ScalarProperty Name="oCID" ColumnName="oCID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChairmanMeetings">
+            <EntityTypeMapping TypeName="Model.ChairmanMeeting">
+              <MappingFragment StoreEntitySet="ChairmanMeeting">
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="Model.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="id_game" ColumnName="id_game" />
+                <ScalarProperty Name="name_g" ColumnName="name_g" />
+                <ScalarProperty Name="majer_g" ColumnName="majer_g" />
+                <ScalarProperty Name="count_g" ColumnName="count_g" />
+                <ScalarProperty Name="date_start_g" ColumnName="date_start_g" />
+                <ScalarProperty Name="date_finish_g" ColumnName="date_finish_g" />
+                <ScalarProperty Name="place_g" ColumnName="place_g" />
+                <ScalarProperty Name="comment_g" ColumnName="comment_g" />
+                <ScalarProperty Name="oCID" ColumnName="oCID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Graduates">
+            <EntityTypeMapping TypeName="Model.Graduate">
+              <MappingFragment StoreEntitySet="Graduates">
+                <ScalarProperty Name="id_grad" ColumnName="id_grad" />
+                <ScalarProperty Name="codemeli" ColumnName="codemeli" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="fathername" ColumnName="fathername" />
+                <ScalarProperty Name="birth" ColumnName="birth" />
+                <ScalarProperty Name="shnumber" ColumnName="shnumber" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="phon" ColumnName="phon" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="study" ColumnName="study" />
+                <ScalarProperty Name="majer" ColumnName="majer" />
+                <ScalarProperty Name="gpa" ColumnName="gpa" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="oCID" ColumnName="oCID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JoiningCamps">
+            <EntityTypeMapping TypeName="Model.JoiningCamp">
+              <MappingFragment StoreEntitySet="JoiningCamp">
+                <ScalarProperty Name="id_join_camp" ColumnName="id_join_camp" />
+                <ScalarProperty Name="CaID" ColumnName="CaID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JoiningGames">
+            <EntityTypeMapping TypeName="Model.JoiningGame">
+              <MappingFragment StoreEntitySet="JoiningGame">
+                <ScalarProperty Name="id_join_game" ColumnName="id_join_game" />
+                <ScalarProperty Name="GAID" ColumnName="GAID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JoiningMeetings">
+            <EntityTypeMapping TypeName="Model.JoiningMeeting">
+              <MappingFragment StoreEntitySet="JoiningMeeting">
+                <ScalarProperty Name="id_join_mett" ColumnName="id_join_mett" />
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meetings">
+            <EntityTypeMapping TypeName="Model.Meeting">
+              <MappingFragment StoreEntitySet="Meetings">
+                <ScalarProperty Name="id_meeting" ColumnName="id_meeting" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="major" ColumnName="major" />
+                <ScalarProperty Name="date_start" ColumnName="date_start" />
+                <ScalarProperty Name="date_finish" ColumnName="date_finish" />
+                <ScalarProperty Name="teacher" ColumnName="teacher" />
+                <ScalarProperty Name="count_m" ColumnName="count_m" />
+                <ScalarProperty Name="madrak" ColumnName="madrak" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="oCID" ColumnName="oCID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oganizers">
+            <EntityTypeMapping TypeName="Model.Oganizer">
+              <MappingFragment StoreEntitySet="Oganizer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="oCID" ColumnName="oCID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organizer_parties">
+            <EntityTypeMapping TypeName="Model.Organizer_party">
+              <MappingFragment StoreEntitySet="Organizer party">
+                <ScalarProperty Name="CommunityID" ColumnName="CommunityID" />
+                <ScalarProperty Name="office" ColumnName="office" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestCamps">
+            <EntityTypeMapping TypeName="Model.RequestCamp">
+              <MappingFragment StoreEntitySet="RequestCamp">
+                <ScalarProperty Name="CaID" ColumnName="CaID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestCompetitions">
+            <EntityTypeMapping TypeName="Model.RequestCompetition">
+              <MappingFragment StoreEntitySet="RequestCompetition">
+                <ScalarProperty Name="CoID" ColumnName="CoID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestMeetings">
+            <EntityTypeMapping TypeName="Model.RequestMeeting">
+              <MappingFragment StoreEntitySet="RequestMeeting">
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="Model.Skill">
+              <MappingFragment StoreEntitySet="Skills">
+                <ScalarProperty Name="nameskill" ColumnName="nameskill" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
